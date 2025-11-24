@@ -36,8 +36,8 @@
             });
         });
 
-        // Auto-play carousel (2 seconds)
-        let autoPlay = setInterval(nextSlide, 2000);
+        // Auto-play carousel (3 seconds)
+        let autoPlay = setInterval(nextSlide, 3000);
 
         // Pause on hover
         // @ts-ignore
