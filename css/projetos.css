@@ -575,3 +575,544 @@ footer {
         flex-direction: column;
     }
 }
+
+/* ========== TEMA ESCURO E CLARO ========== */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Tema Claro */
+body.light-theme {
+    background: #f5f5f5 !important;
+    color: #333 !important;
+}
+
+body.light-theme .wave-container svg path {
+    opacity: 0.3;
+}
+
+body.light-theme .gradient-overlay {
+    background: radial-gradient(ellipse at top, rgba(102, 126, 234, 0.05), transparent 50%),
+                radial-gradient(ellipse at bottom, rgba(118, 75, 162, 0.05), transparent 50%);
+}
+
+body.light-theme .dots .dot {
+    background: rgba(102, 126, 234, 0.4);
+}
+
+body.light-theme .hero-title,
+body.light-theme .section-title,
+body.light-theme .about-title,
+body.light-theme .class-title,
+body.light-theme .project-title {
+    background: linear-gradient(135deg, #5566d3 0%, #663d8f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.light-theme .hero-subtitle,
+body.light-theme .class-description,
+body.light-theme .project-description,
+body.light-theme .about-text,
+body.light-theme .stat-label,
+body.light-theme .global-stat-label {
+    color: #555 !important;
+}
+
+body.light-theme .class-card,
+body.light-theme .project-card,
+body.light-theme .global-stat {
+    background: rgba(255,255,255,0.8);
+    border-color: rgba(0,0,0,0.1);
+}
+
+body.light-theme .class-card:hover,
+body.light-theme .project-card:hover,
+body.light-theme .global-stat:hover {
+    background: rgba(255,255,255,0.95);
+    border-color: rgba(102, 126, 234, 0.3);
+}
+
+body.light-theme footer {
+    background: linear-gradient(180deg, rgba(240,240,240,0.9) 0%, rgba(220,220,220,0.95) 100%);
+    border-top-color: rgba(0,0,0,0.1);
+}
+
+body.light-theme .footer-section h3 {
+    background: linear-gradient(135deg, #5566d3 0%, #663d8f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.light-theme .footer-section p,
+body.light-theme .footer-bottom p {
+    color: #555 !important;
+}
+
+body.light-theme .social-link {
+    background: rgba(0,0,0,0.05);
+    border-color: rgba(0,0,0,0.1);
+    color: #333;
+}
+
+body.light-theme .social-link:hover {
+    background: rgba(102, 126, 234, 0.15);
+    border-color: rgba(102, 126, 234, 0.3);
+    color: #5566d3;
+}
+
+body.light-theme .carousel-overlay h2,
+body.light-theme .carousel-overlay p {
+    text-shadow: 0 2px 10px rgba(255,255,255,0.8);
+}
+
+body.light-theme .carousel-slide img {
+    filter: brightness(0.9);
+}
+
+body.light-theme .group-tab {
+    background: rgba(0,0,0,0.05);
+    border-color: rgba(0,0,0,0.1);
+    color: #555;
+}
+
+body.light-theme .group-tab:hover {
+    background: rgba(0,0,0,0.1);
+    color: #333;
+}
+
+body.light-theme .group-tab.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+body.light-theme .project-number,
+body.light-theme .stat-number,
+body.light-theme .global-stat-number {
+    color: #5566d3 !important;
+}
+
+body.light-theme .creator-highlight {
+    color: #5566d3 !important;
+}
+
+body.light-theme .scroll-indicator::after {
+    color: #5566d3;
+}
+
+/* ========== BOTÕES DE CONTROLE ========== */
+.controls-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 10000;
+}
+
+.control-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    font-size: 0.9rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.light-theme .control-btn {
+    background: rgba(0,0,0,0.08);
+    border-color: rgba(0,0,0,0.15);
+    color: #333;
+}
+
+.control-btn:hover {
+    background: rgba(102, 126, 234, 0.3);
+    border-color: rgba(102, 126, 234, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+body.light-theme .control-btn:hover {
+    background: rgba(102, 126, 234, 0.2);
+    border-color: rgba(102, 126, 234, 0.4);
+}
+
+.control-btn svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.control-btn:hover svg {
+    transform: rotate(20deg);
+}
+
+.icon-sun,
+.icon-moon,
+.icon-language {
+    flex-shrink: 0;
+}
+
+#current-lang {
+    font-weight: 700;
+    font-size: 0.85rem;
+    min-width: 25px;
+    text-align: center;
+}
+
+/* Responsive para botões */
+@media (max-width: 768px) {
+    .controls-container {
+        top: 10px;
+        right: 10px;
+        gap: 10px;
+    }
+
+    .control-btn {
+        padding: 10px 15px;
+        font-size: 0.8rem;
+    }
+
+    .control-btn span:not(#current-lang) {
+        display: none;
+    }
+
+    .control-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Animação suave para transição de tema */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Garantir que os gradientes não sejam afetados pela transição */
+.hero-title,
+.section-title,
+.about-title,
+.class-title,
+.project-title,
+.footer-section h3 {
+    transition: none;
+}
+
+
+
+
+
+
+
+
+/* ========== BOTÃO VOLTAR ========== */
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    font-size: 0.9rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 10000;
+}
+
+body.light-theme .back-btn {
+    background: rgba(0,0,0,0.08);
+    border-color: rgba(0,0,0,0.15);
+    color: #333;
+}
+
+.back-btn:hover {
+    background: rgba(102, 126, 234, 0.3);
+    border-color: rgba(102, 126, 234, 0.5);
+    transform: translateX(-5px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+body.light-theme .back-btn:hover {
+    background: rgba(102, 126, 234, 0.2);
+    border-color: rgba(102, 126, 234, 0.4);
+}
+
+.back-btn svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.back-btn:hover svg {
+    transform: translateX(-3px);
+}
+
+/* Responsive para botão voltar */
+@media (max-width: 768px) {
+    .back-btn {
+        padding: 10px 15px;
+        font-size: 0.8rem;
+        top: 10px;
+        left: 10px;
+    }
+
+    .back-btn span {
+        display: none;
+    }
+
+    .back-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* ========== TEMA ESCURO E CLARO ========== */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Tema Claro */
+body.light-theme {
+    background: #f5f5f5 !important;
+    color: #333 !important;
+}
+
+body.light-theme .wave-container svg path {
+    opacity: 0.3;
+}
+
+body.light-theme .gradient-overlay {
+    background: radial-gradient(ellipse at top, rgba(102, 126, 234, 0.05), transparent 50%),
+                radial-gradient(ellipse at bottom, rgba(118, 75, 162, 0.05), transparent 50%);
+}
+
+body.light-theme .dots .dot {
+    background: rgba(102, 126, 234, 0.4);
+}
+
+body.light-theme .hero-title,
+body.light-theme .section-title,
+body.light-theme .about-title,
+body.light-theme .class-title,
+body.light-theme .project-title {
+    background: linear-gradient(135deg, #5566d3 0%, #663d8f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.light-theme .hero-subtitle,
+body.light-theme .class-description,
+body.light-theme .project-description,
+body.light-theme .about-text,
+body.light-theme .stat-label,
+body.light-theme .global-stat-label {
+    color: #555 !important;
+}
+
+body.light-theme .class-card,
+body.light-theme .project-card,
+body.light-theme .global-stat {
+    background: rgba(255,255,255,0.8);
+    border-color: rgba(0,0,0,0.1);
+}
+
+body.light-theme .class-card:hover,
+body.light-theme .project-card:hover,
+body.light-theme .global-stat:hover {
+    background: rgba(255,255,255,0.95);
+    border-color: rgba(102, 126, 234, 0.3);
+}
+
+body.light-theme footer {
+    background: linear-gradient(180deg, rgba(240,240,240,0.9) 0%, rgba(220,220,220,0.95) 100%);
+    border-top-color: rgba(0,0,0,0.1);
+}
+
+body.light-theme .footer-section h3 {
+    background: linear-gradient(135deg, #5566d3 0%, #663d8f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.light-theme .footer-section p,
+body.light-theme .footer-bottom p {
+    color: #555 !important;
+}
+
+body.light-theme .social-link {
+    background: rgba(0,0,0,0.05);
+    border-color: rgba(0,0,0,0.1);
+    color: #333;
+}
+
+body.light-theme .social-link:hover {
+    background: rgba(102, 126, 234, 0.15);
+    border-color: rgba(102, 126, 234, 0.3);
+    color: #5566d3;
+}
+
+body.light-theme .carousel-overlay h2,
+body.light-theme .carousel-overlay p {
+    text-shadow: 0 2px 10px rgba(255,255,255,0.8);
+}
+
+body.light-theme .carousel-slide img {
+    filter: brightness(0.9);
+}
+
+body.light-theme .group-tab {
+    background: rgba(0,0,0,0.05);
+    border-color: rgba(0,0,0,0.1);
+    color: #555;
+}
+
+body.light-theme .group-tab:hover {
+    background: rgba(0,0,0,0.1);
+    color: #333;
+}
+
+body.light-theme .group-tab.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+body.light-theme .project-number,
+body.light-theme .stat-number,
+body.light-theme .global-stat-number {
+    color: #5566d3 !important;
+}
+
+body.light-theme .creator-highlight {
+    color: #5566d3 !important;
+}
+
+body.light-theme .scroll-indicator::after {
+    color: #5566d3;
+}
+
+/* ========== BOTÕES DE CONTROLE ========== */
+.controls-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 10000;
+}
+
+.control-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    font-size: 0.9rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.light-theme .control-btn {
+    background: rgba(0,0,0,0.08);
+    border-color: rgba(0,0,0,0.15);
+    color: #333;
+}
+
+.control-btn:hover {
+    background: rgba(102, 126, 234, 0.3);
+    border-color: rgba(102, 126, 234, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+body.light-theme .control-btn:hover {
+    background: rgba(102, 126, 234, 0.2);
+    border-color: rgba(102, 126, 234, 0.4);
+}
+
+.control-btn svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.control-btn:hover svg {
+    transform: rotate(20deg);
+}
+
+.icon-sun,
+.icon-moon,
+.icon-language {
+    flex-shrink: 0;
+}
+
+#current-lang {
+    font-weight: 700;
+    font-size: 0.85rem;
+    min-width: 25px;
+    text-align: center;
+}
+
+/* Responsive para botões */
+@media (max-width: 768px) {
+    .controls-container {
+        top: 10px;
+        right: 10px;
+        gap: 10px;
+    }
+
+    .control-btn {
+        padding: 10px 15px;
+        font-size: 0.8rem;
+    }
+
+    .control-btn span:not(#current-lang) {
+        display: none;
+    }
+
+    .control-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Animação suave para transição de tema */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Garantir que os gradientes não sejam afetados pela transição */
+.hero-title,
+.section-title,
+.about-title,
+.class-title,
+.project-title,
+.footer-section h3 {
+    transition: none;
+}

@@ -5,9 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SENAI - Projetos 2025</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/i18n.css">
     <script src="js/script.js" defer></script>
+    <script src="js/i18n.js" defer></script>
 </head>
 <body>
+    <!-- Botões de Controle de Tema e Idioma -->
+    <div class="controls-container">
+        <!-- Botão de Tema -->
+        <button class="control-btn" id="theme-toggle" aria-label="Alternar tema">
+            <svg class="icon-sun" id="sun-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="5" fill="currentColor"/>
+                <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+                <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/>
+                <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"/>
+                <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <svg class="icon-moon" id="moon-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
+            </svg>
+            <span data-i18n="theme">Tema</span>
+        </button>
+
+        <!-- Botão de Idioma -->
+        <button class="control-btn" id="language-toggle" aria-label="Alternar idioma">
+            <svg class="icon-language" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z" fill="currentColor"/>
+            </svg>
+            <span id="current-lang">PT</span>
+        </button>
+    </div>
+
     <!-- Liquid Waves Background -->
     <div class="wave-container">
         <svg class="wave" viewBox="0 0 1440 320" preserveAspectRatio="none">
@@ -63,14 +95,14 @@
                 <text x="100" y="49" font-family="Arial, sans-serif" font-size="39" font-weight="bold" fill="white" text-anchor="middle">SENAI</text>
             </svg>
         </div>
-        <h1 class="hero-title">Projetos SENAI 2025</h1>
-        <p class="hero-subtitle">São Carlos - Inovação e Tecnologia</p>
+        <h1 class="hero-title" data-i18n="heroTitle">Projetos SENAI 2025</h1>
+        <p class="hero-subtitle" data-i18n="heroSubtitle">São Carlos - Inovação e Tecnologia</p>
         <div class="scroll-indicator"></div>
     </section>
 
     <!-- Classes Section -->
     <section class="classes-section">
-        <h2 class="section-title">Turmas SENAI São Carlos 2025</h2>
+        <h2 class="section-title" data-i18n="classesTitle">Turmas SENAI São Carlos 2025</h2>
         
         <div class="classes-grid">
             <!-- Turma 3TDS -->
@@ -80,21 +112,21 @@
                     <div class="class-badge">3TDS</div>
                 </div>
                 <div class="class-content">
-                    <h3 class="class-title">3º Técnico em Desenvolvimento de Sistemas</h3>
-                    <p class="class-description">
+                    <h3 class="class-title" data-i18n="class3TDSTitle">3º Técnico em Desenvolvimento de Sistemas</h3>
+                    <p class="class-description" data-i18n="class3TDSDesc">
                         Turma de formandos com projetos inovadores em desenvolvimento web full-stack, IoT, automação e sistemas inteligentes.
                     </p>
                     <div class="class-stats">
                         <div class="stat">
                             <div class="stat-number">7</div>
-                            <div class="stat-label">Projetos</div>
+                            <div class="stat-label" data-i18n="projects">Projetos</div>
                         </div>
                         <div class="stat">
                             <div class="stat-number">36</div>
-                            <div class="stat-label">Alunos</div>
+                            <div class="stat-label" data-i18n="students">Alunos</div>
                         </div>
                     </div>
-                    <a href="html/3TDS.html" class="class-btn">Ver Projetos</a>
+                    <a href="html/3TDS.html" class="class-btn" data-i18n="viewProjects">Ver Projetos</a>
                 </div>
             </div>
 
@@ -105,21 +137,21 @@
                     <div class="class-badge">2IMEC-B</div>
                 </div>
                 <div class="class-content">
-                    <h3 class="class-title">2º Integral em Mecatrônica - Turma B</h3>
-                    <p class="class-description">
+                    <h3 class="class-title" data-i18n="class2IMECBTitle">2º Integral em Mecatrônica - Turma B</h3>
+                    <p class="class-description" data-i18n="class2IMECBDesc">
                         Projetos integrando robótica, automação industrial, eletrônica e programação embarcada para soluções mecatrônicas.
                     </p>
                     <div class="class-stats">
                         <div class="stat">
                             <div class="stat-number">6</div>
-                            <div class="stat-label">Projetos</div>
+                            <div class="stat-label" data-i18n="projects">Projetos</div>
                         </div>
                         <div class="stat">
                             <div class="stat-number">30</div>
-                            <div class="stat-label">Alunos</div>
+                            <div class="stat-label" data-i18n="students">Alunos</div>
                         </div>
                     </div>
-                    <a href="html/2IMEC-B.html" class="class-btn">Ver Projetos</a>
+                    <a href="html/2IMEC-B.html" class="class-btn" data-i18n="viewProjects">Ver Projetos</a>
                 </div>
             </div>
 
@@ -130,21 +162,21 @@
                     <div class="class-badge">2IMEC-C</div>
                 </div>
                 <div class="class-content">
-                    <h3 class="class-title">2º Integral em Mecatrônica - Turma C</h3>
-                    <p class="class-description">
+                    <h3 class="class-title" data-i18n="class2IMECCTitle">2º Integral em Mecatrônica - Turma C</h3>
+                    <p class="class-description" data-i18n="class2IMECCDesc">
                         Desenvolvimento de sistemas automatizados, sensores inteligentes e controle de processos industriais aplicados.
                     </p>
                     <div class="class-stats">
                         <div class="stat">
                             <div class="stat-number">7</div>
-                            <div class="stat-label">Projetos</div>
+                            <div class="stat-label" data-i18n="projects">Projetos</div>
                         </div>
                         <div class="stat">
                             <div class="stat-number">32</div>
-                            <div class="stat-label">Alunos</div>
+                            <div class="stat-label" data-i18n="students">Alunos</div>
                         </div>
                     </div>
-                    <a href="html/2IMEC-C.html" class="class-btn">Ver Projetos</a>
+                    <a href="html/2IMEC-C.html" class="class-btn" data-i18n="viewProjects">Ver Projetos</a>
                 </div>
             </div>
 
@@ -155,21 +187,21 @@
                     <div class="class-badge">2IDS-SC</div>
                 </div>
                 <div class="class-content">
-                    <h3 class="class-title">2º Integral em Desenvolvimento de Sistemas</h3>
-                    <p class="class-description">
+                    <h3 class="class-title" data-i18n="class2IDSTitle">2º Integral em Desenvolvimento de Sistemas</h3>
+                    <p class="class-description" data-i18n="class2IDSDesc">
                         Turma integral com foco em aplicações web modernas, mobile, banco de dados e arquitetura de software escalável.
                     </p>
                     <div class="class-stats">
                         <div class="stat">
                             <div class="stat-number">8</div>
-                            <div class="stat-label">Projetos</div>
+                            <div class="stat-label" data-i18n="projects">Projetos</div>
                         </div>
                         <div class="stat">
                             <div class="stat-number">35</div>
-                            <div class="stat-label">Alunos</div>
+                            <div class="stat-label" data-i18n="students">Alunos</div>
                         </div>
                     </div>
-                    <a href="html/2IDS.html" class="class-btn">Ver Projetos</a>
+                    <a href="html/2IDS.html" class="class-btn" data-i18n="viewProjects">Ver Projetos</a>
                 </div>
             </div>
         </div>
@@ -178,8 +210,8 @@
     <!-- About Section -->
     <section class="about-section">
         <div class="about-container">
-            <h2 class="about-title">Sobre o SENAI São Carlos</h2>
-            <p class="about-text">
+            <h2 class="about-title" data-i18n="aboutTitle">Sobre o SENAI São Carlos</h2>
+            <p class="about-text" data-i18n="aboutText">
                 O SENAI São Carlos é referência em formação técnica e tecnológica na região, 
                 preparando profissionais para os desafios da Indústria 4.0. Nossos alunos desenvolvem 
                 projetos inovadores que conectam teoria e prática, criando soluções reais para problemas 
@@ -189,19 +221,19 @@
             <div class="stats-grid">
                 <div class="global-stat">
                     <div class="global-stat-number">28+</div>
-                    <div class="global-stat-label">Projetos Desenvolvidos</div>
+                    <div class="global-stat-label" data-i18n="projectsDeveloped">Projetos Desenvolvidos</div>
                 </div>
                 <div class="global-stat">
                     <div class="global-stat-number">100+</div>
-                    <div class="global-stat-label">Alunos Participantes</div>
+                    <div class="global-stat-label" data-i18n="studentsParticipating">Alunos Participantes</div>
                 </div>
                 <div class="global-stat">
                     <div class="global-stat-number">4</div>
-                    <div class="global-stat-label">Turmas Participantes</div>
+                    <div class="global-stat-label" data-i18n="participatingClasses">Turmas Participantes</div>
                 </div>
                 <div class="global-stat">
                     <div class="global-stat-number">100%</div>
-                    <div class="global-stat-label">Dedicação e Inovação</div>
+                    <div class="global-stat-label" data-i18n="dedicationInnovation">Dedicação e Inovação</div>
                 </div>
             </div>
         </div>
@@ -212,29 +244,29 @@
         <div class="footer-content">
             <!-- Sobre SENAI -->
             <div class="footer-section">
-                <h3>SENAI São Carlos</h3>
-                <p>
+                <h3 data-i18n="footerAboutTitle">SENAI São Carlos</h3>
+                <p data-i18n="footerAboutText">
                     Centro de referência em formação técnica e tecnológica, 
                     preparando profissionais para os desafios da Indústria 4.0.
                 </p>
                 <p style="margin-top: 20px;">
-                    <strong>Formando o futuro da tecnologia</strong>
+                    <strong data-i18n="footerAboutSlogan">Formando o futuro da tecnologia</strong>
                 </p>
             </div>
 
             <!-- Turmas -->
             <div class="footer-section">
-                <h3>Turmas 2024/2025</h3>
-                <p>3º Técnico em Desenvolvimento de Sistemas</p>
-                <p>2º Integral em Mecatrônica - Turma B</p>
-                <p>2º Integral em Mecatrônica - Turma C</p>
-                <p>2º Integral em Desenvolvimento de Sistemas</p>
+                <h3 data-i18n="footerClassesTitle">Turmas 2024/2025</h3>
+                <p data-i18n="class3TDSTitle">3º Técnico em Desenvolvimento de Sistemas</p>
+                <p data-i18n="class2IMECBTitle">2º Integral em Mecatrônica - Turma B</p>
+                <p data-i18n="class2IMECCTitle">2º Integral em Mecatrônica - Turma C</p>
+                <p data-i18n="class2IDSTitle">2º Integral em Desenvolvimento de Sistemas</p>
             </div>
 
             <!-- Desenvolvedor -->
             <div class="footer-section">
-                <h3>Desenvolvedor</h3>
-                <p>Desenvolvido por <strong class="creator-highlight">Felipe De Freitas Rossi</strong></p>
+                <h3 data-i18n="footerDeveloperTitle">Desenvolvedor</h3>
+                <p><span data-i18n="footerDevelopedBy">Desenvolvido por</span> <strong class="creator-highlight">Felipe De Freitas Rossi</strong></p>
                 
                 <div class="social-links">
                     <a href="https://instagram.com/fezinn_08" target="_blank" class="social-link">
@@ -259,10 +291,10 @@
         <div class="footer-divider"></div>
 
         <div class="footer-bottom">
-            <p><strong>SENAI São-Carlos</strong> - Serviço Nacional de Aprendizagem Industrial</p>
-            <p>© 2025 Todos os direitos reservados</p>
+            <p><strong>SENAI São-Carlos</strong> - <span data-i18n="footerIndustry">Serviço Nacional de Aprendizagem Industrial</span></p>
+            <p data-i18n="footerRights">© 2025 Todos os direitos reservados</p>
             <p style="margin-top: 15px; font-size: 0.85rem;">
-                Desenvolvido por <span class="creator-highlight">Felipe De Freitas Rossi</span>
+                <span data-i18n="footerDevelopedBy">Desenvolvido por</span> <span class="creator-highlight">Felipe De Freitas Rossi</span>
             </p>
         </div>
     </footer>

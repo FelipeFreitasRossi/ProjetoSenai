@@ -4,10 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SENAI - 2IMEC-C</title>
+    
     <link rel="stylesheet" href="/css/projetos.css">
+    <link rel="stylesheet" href="/css/i18n.css">
+    <link rel="stylesheet" href="/css/button.css">
+
     <script src="/js/2IMEC-C.js" defer></script>
+    <script src="/js/i18n.js" defer></script>
 </head>
 <body>
+        <!-- Botão Voltar -->
+    <button class="back-btn" onclick="window.history.back()" aria-label="Voltar">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="currentColor"/>
+        </svg>
+        <span data-i18n="back">Voltar</span>
+    </button>
+    <!-- Botões de Controle de Tema e Idioma -->
+    <div class="controls-container">
+        <!-- Botão de Tema -->
+        <button class="control-btn" id="theme-toggle" aria-label="Alternar tema">
+            <svg class="icon-sun" id="sun-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="5" fill="currentColor"/>
+                <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+                <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/>
+                <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"/>
+                <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <svg class="icon-moon" id="moon-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
+            </svg>
+            <span data-i18n="theme">Tema</span>
+        </button>
+
+        <!-- Botão de Idioma -->
+        <button class="control-btn" id="language-toggle" aria-label="Alternar idioma">
+            <svg class="icon-language" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z" fill="currentColor"/>
+            </svg>
+            <span id="current-lang">PT</span>
+        </button>
+    </div>
+
     <!-- Particles Canvas -->
     <canvas id="particles-canvas"></canvas>
 
@@ -19,12 +61,12 @@
     <section class="carousel-section">
         <div class="carousel-header">
             <div class="group-tabs">
-                <div class="group-tab active" data-slide="1">Mechatec Solutions</div>
-                <div class="group-tab" data-slide="2">CyberTrace: Plotech</div>
-                <div class="group-tab" data-slide="3">TechnoArm : Arm Simulator</div>
-                <div class="group-tab" data-slide="4">SelectPro: WinderTech</div>
-                <div class="group-tab" data-slide="5">Grupo 5</div>
-                <div class="group-tab" data-slide="6">Grupo 6</div>
+                <div class="group-tab active" data-slide="0">Mechatec Solutions</div>
+                <div class="group-tab" data-slide="1">CyberTrace: Plotech</div>
+                <div class="group-tab" data-slide="2">TechnoArm : Arm Simulator</div>
+                <div class="group-tab" data-slide="3">SelectPro: WinderTech</div>
+                <div class="group-tab" data-slide="4" data-i18n="group5">Grupo 5</div>
+                <div class="group-tab" data-slide="5" data-i18n="group6">Grupo 6</div>
             </div>
         </div>
         
@@ -32,43 +74,43 @@
             <div class="carousel-slide active">
                 <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1920&h=1080&fit=crop" alt="Grupo 1">
                 <div class="carousel-overlay">
-                    <h2>Gerenciamento de brocas</h2>
+                    <h2 data-i18n="mecC_project1Title">Gerenciamento de brocas</h2>
                     <p>Mechatec Solutions</p>
                 </div>
             </div>
             <div class="carousel-slide">
                 <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1920&h=1080&fit=crop" alt="Grupo 2">
                 <div class="carousel-overlay">
-                    <h2>Desenhos Técnicos com inteligência artificial</h2>
+                    <h2 data-i18n="mecC_project2Title">Desenhos Técnicos com inteligência artificial</h2>
                     <p>CyberTrace: Plotech</p>
                 </div>
             </div>
             <div class="carousel-slide">
                 <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1920&h=1080&fit=crop" alt="Grupo 3">
                 <div class="carousel-overlay">
-                    <h2>Braço robótico</h2>
+                    <h2 data-i18n="mecC_project3Title">Braço robótico</h2>
                     <p>TechnoArm : Arm Simulator</p>
                 </div>
             </div>
             <div class="carousel-slide">
                 <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&h=1080&fit=crop" alt="Grupo 4">
                 <div class="carousel-overlay">
-                    <h2>CNC Controlado por Arduino</h2>
+                    <h2 data-i18n="mecC_project4Title">CNC Controlado por Arduino</h2>
                     <p>SelectPro: WinderTech</p>
                 </div>
             </div>
             <div class="carousel-slide">
                 <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=1920&h=1080&fit=crop" alt="Grupo 5">
                 <div class="carousel-overlay">
-                    <h2>Sistema de Controle de Esteira</h2>
+                    <h2 data-i18n="mecC_project5Title">Sistema de Controle de Esteira</h2>
                     <p>InnovaTech</p>
                 </div>
             </div>
             <div class="carousel-slide">
                 <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1920&h=1080&fit=crop" alt="Grupo 6">
                 <div class="carousel-overlay">
-                    <h2>Sensor IoT para Indústria 4.0</h2>
-                    <p>Grupo 6</p>
+                    <h2 data-i18n="mecC_project6Title">Sensor IoT para Indústria 4.0</h2>
+                    <p data-i18n="group6">Grupo 6</p>
                 </div>
             </div>
             
@@ -81,7 +123,7 @@
 
     <!-- Projects Section -->
     <section class="projects-section">
-        <h2 class="section-title">Projetos 2IMEC-B</h2>
+        <h2 class="section-title" data-i18n="mecC_sectionTitle">Projetos 2IMEC-C</h2>
 
         <!-- Projeto 1 -->
         <div class="project-card">
@@ -91,27 +133,27 @@
             </div>
             <div class="project-content">
                 <div class="project-number">Mechatec Solutions</div>
-                <h3 class="project-title">Gerenciamento de Broca</h3>
-                <p class="project-description">
+                <h3 class="project-title" data-i18n="mecC_project1Title">Gerenciamento de Broca</h3>
+                <p class="project-description" data-i18n="mecC_project1Desc">
                     Seletora de brocas automatizada, onde você escolhe a broca desejada e ela te entrega automaticamente, fazendo o controle de dados e organizando o ambiente de trabalho
                 </p>
-                <a href="https://www.youtube.com/watch?v=EnHxN1TUS8s" target="_blank" class="project-link">Assistir Vídeo</a>
+                <a href="https://www.youtube.com/watch?v=EnHxN1TUS8s" target="_blank" class="project-link" data-i18n="watchVideo">Assistir Vídeo</a>
             </div>
         </div>
 
         <!-- Projeto 2 -->
         <div class="project-card">
             <div class="project-image" onclick="window.open('https://www.youtube.com/watch?v=EnHxN1TUS8s', '_blank')">
-                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800 " alt="Projeto 2">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800" alt="Projeto 2">
                 <div class="play-button">▶</div>
             </div>
             <div class="project-content">
                 <div class="project-number">CyberTrace: Plotech</div>
-                <h3 class="project-title">Desenhos Técnicos com inteligência artificial</h3>
-                <p class="project-description">
+                <h3 class="project-title" data-i18n="mecC_project2Title">Desenhos Técnicos com inteligência artificial</h3>
+                <p class="project-description" data-i18n="mecC_project2Desc">
                     Plotech, a mesa cartesiana de baixo custo controlada por uma inteligência artificial, que será projetada para realizar desenhos técnicos e escritas com precisão.
                 </p>
-                <a href="https://www.youtube.com/watch?v=EnHxN1TUS8s" target="_blank" class="project-link">Assistir Vídeo</a>
+                <a href="https://www.youtube.com/watch?v=EnHxN1TUS8s" target="_blank" class="project-link" data-i18n="watchVideo">Assistir Vídeo</a>
             </div>
         </div>
 
@@ -123,11 +165,11 @@
             </div>
             <div class="project-content">
                 <div class="project-number">TechnoArm:Arm Simulator</div>
-                <h3 class="project-title">Braço robótico</h3>
-                <p class="project-description">
+                <h3 class="project-title" data-i18n="mecC_project3Title">Braço robótico</h3>
+                <p class="project-description" data-i18n="mecC_project3Desc">
                     Braço robótico em menor escala, para uma solução prática, aulas dinâmicas e melhor o desenvolvimento de trabalhos e estudos
                 </p>
-                <a href="https://youtube.com" target="_blank" class="project-link">Assistir Vídeo</a>
+                <a href="https://youtube.com" target="_blank" class="project-link" data-i18n="watchVideo">Assistir Vídeo</a>
             </div>
         </div>
 
@@ -139,12 +181,12 @@
             </div>
             <div class="project-content">
                 <div class="project-number">SelectPro: WinderTech</div>
-                <h3 class="project-title">CNC Controlado por Arduino</h3>
-                <p class="project-description">
+                <h3 class="project-title" data-i18n="mecC_project4Title">CNC Controlado por Arduino</h3>
+                <p class="project-description" data-i18n="mecC_project4Desc">
                     Fresadora CNC de 3 eixos controlada por GRBL e Arduino, capaz de realizar 
                     usinagem de precisão em materiais como madeira, plástico e alumínio.
                 </p>
-                <a href="https://youtube.com" target="_blank" class="project-link">Assistir Vídeo</a>
+                <a href="https://youtube.com" target="_blank" class="project-link" data-i18n="watchVideo">Assistir Vídeo</a>
             </div>
         </div>
 
@@ -156,11 +198,11 @@
             </div>
             <div class="project-content">
                 <div class="project-number">InnovaTech</div>
-                <h3 class="project-title">Visão computacional de Gerenciamento</h3>
-                <p class="project-description">
+                <h3 class="project-title" data-i18n="mecC_project5Title">Visão computacional de Gerenciamento</h3>
+                <p class="project-description" data-i18n="mecC_project5Desc">
                     Visão computacional para uma organização precisa, eficiente e com qualidade garantida.
                 </p>
-                <a href="https://youtube.com" target="_blank" class="project-link">Assistir Vídeo</a>
+                <a href="https://youtube.com" target="_blank" class="project-link" data-i18n="watchVideo">Assistir Vídeo</a>
             </div>
         </div>
 
@@ -171,13 +213,13 @@
                 <div class="play-button">▶</div>
             </div>
             <div class="project-content">
-                <div class="project-number">PROJETO 06</div>
-                <h3 class="project-title">Sistema IoT para Indústria 4.0</h3>
-                <p class="project-description">
+                <div class="project-number" data-i18n="project06">PROJETO 06</div>
+                <h3 class="project-title" data-i18n="mecC_project6Title">Sistema IoT para Indústria 4.0</h3>
+                <p class="project-description" data-i18n="mecC_project6Desc">
                     Rede de sensores inteligentes conectados via IoT para monitoramento em tempo real 
                     de temperatura, umidade, vibração e consumo energético de máquinas industriais.
                 </p>
-                <a href="https://youtube.com" target="_blank" class="project-link">Assistir Vídeo</a>
+                <a href="https://youtube.com" target="_blank" class="project-link" data-i18n="watchVideo">Assistir Vídeo</a>
             </div>
         </div>
     </section>
@@ -187,34 +229,34 @@
         <div class="footer-content">
             <!-- Sobre SENAI -->
             <div class="footer-section">
-                <h3>SENAI São Carlos</h3>
-                <p>
+                <h3 data-i18n="footerAboutTitle">SENAI São Carlos</h3>
+                <p data-i18n="footerAboutText">
                     Centro de referência em formação técnica e tecnológica, 
                     preparando profissionais para os desafios da Indústria 4.0.
                 </p>
                 <p style="margin-top: 20px;">
-                    <strong>Formando o futuro da tecnologia</strong>
+                    <strong data-i18n="footerAboutSlogan">Formando o futuro da tecnologia</strong>
                 </p>
             </div>
 
             <!-- Turmas -->
             <div class="footer-section">
-                <h3>Turmas 2024/2025</h3>
-                <p>3º Técnico em Desenvolvimento de Sistemas</p>
-                <p>2º Integral em Mecatrônica - Turma B</p>
-                <p>2º Integral em Mecatrônica - Turma C</p>
-                <p>2º Integral em Desenvolvimento de Sistemas</p>
+                <h3 data-i18n="footerClassesTitle">Turmas 2024/2025</h3>
+                <p data-i18n="class3TDSTitle">3º Técnico em Desenvolvimento de Sistemas</p>
+                <p data-i18n="class2IMECBTitle">2º Integral em Mecatrônica - Turma B</p>
+                <p data-i18n="class2IMECCTitle">2º Integral em Mecatrônica - Turma C</p>
+                <p data-i18n="class2IDSTitle">2º Integral em Desenvolvimento de Sistemas</p>
             </div>
 
             <!-- Desenvolvedor -->
             <div class="footer-section">
-                <h3>Desenvolvedor</h3>
-                <p>Desenvolvido por <strong class="creator-highlight">Felipe De Freitas Rossi</strong></p>
+                <h3 data-i18n="footerDeveloperTitle">Desenvolvedor</h3>
+                <p><span data-i18n="footerDevelopedBy">Desenvolvido por</span> <strong class="creator-highlight">Felipe De Freitas Rossi</strong></p>
                 
                 <div class="social-links">
                     <a href="https://instagram.com/fezinn_08" target="_blank" class="social-link">
                         <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
                         </svg>
                         @Fezinn_08
                     </a>
@@ -234,10 +276,10 @@
         <div class="footer-divider"></div>
 
         <div class="footer-bottom">
-            <p><strong>SENAI São-Carlos</strong> - Serviço Nacional de Aprendizagem Industrial</p>
-            <p>© 2025 Todos os direitos reservados</p>
+            <p><strong>SENAI São-Carlos</strong> - <span data-i18n="footerIndustry">Serviço Nacional de Aprendizagem Industrial</span></p>
+            <p data-i18n="footerRights">© 2025 Todos os direitos reservados</p>
             <p style="margin-top: 15px; font-size: 0.85rem;">
-                Desenvolvido por <span class="creator-highlight">Felipe De Freitas Rossi</span>
+                <span data-i18n="footerDevelopedBy">Desenvolvido por</span> <span class="creator-highlight">Felipe De Freitas Rossi</span>
             </p>
         </div>
     </footer>
