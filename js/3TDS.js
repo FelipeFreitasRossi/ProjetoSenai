@@ -169,11 +169,6 @@ if (videoButton) {
         // Ação: Pausa o carrossel quando o botão de vídeo é clicado
         clearInterval(autoPlay);
         console.log('Botão de vídeo acionado! Carrossel pausado.');
-        
-        // Se a intenção for abrir um modal ou outra ação JS
-        // Se você quiser manter a navegação padrão (abrir link),
-        // mantenha o e.preventDefault() comentado.
-        // e.preventDefault(); 
     });
 }
 
@@ -251,4 +246,39 @@ window.addEventListener('scroll', () => {
         // @ts-ignore
         canvas.height = document.documentElement.scrollHeight;
     }, 100);
+});
+
+// ==========================================================
+// ======== NOVO: LÓGICA DE VÍDEO NO HOVER DO CARD ========
+// ==========================================================
+// Seleciona todos os CARDS que possuem um vídeo com a classe .video-hover (na verdade o video-hover é o container da imagem)
+document.querySelectorAll('.project-card').forEach(card => {
+    // Procura o container da imagem que tem a classe video-hover
+    const videoContainer = card.querySelector('.project-image.video-hover');
+    
+    if (videoContainer) {
+        // Procura o elemento de vídeo dentro desse container
+        const video = videoContainer.querySelector('video');
+        
+        if (video) {
+            // Quando entra com o mouse no CARD INTEIRO, dá play
+            card.addEventListener('mouseenter', () => {
+                var playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(_ => {
+                        // Play automático começou
+                    })
+                    .catch(error => {
+                        console.log("Autoplay bloqueado ou erro:", error);
+                    });
+                }
+            });
+
+            // Quando sai com o mouse do CARD INTEIRO, pausa
+            card.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0; // Opcional: faz o vídeo voltar ao início sempre
+            });
+        }
+    }
 });

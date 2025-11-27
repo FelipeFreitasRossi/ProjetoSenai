@@ -278,6 +278,35 @@ body {
     z-index: 2; 
 }
 
+/* --- ESTILOS DE VÍDEO NO HOVER DO CARD (ALTERADO) --- */
+.project-image video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Invisível por padrão */
+    transition: opacity 0.5s ease;
+    z-index: 3; /* Fica acima da imagem quando visível */
+    border-radius: 15px;
+}
+
+/* Agora o vídeo aparece quando passa o mouse no CARD inteiro, não só na imagem */
+.project-card:hover .project-image video {
+    opacity: 1;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    filter: brightness(0.8);
+    position: relative;
+    z-index: 2; /* Fica atrás do vídeo */
+}
+
 .project-image::before {
     content: '';
     position: absolute;
@@ -287,7 +316,8 @@ body {
     height: 200%;
     background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.3), transparent);
     transform: rotate(45deg);
-    z-index: 1;
+    z-index: 4; /* Brilho acima de tudo */
+    pointer-events: none; /* Não interfere no mouse */
 }
 .project-image:hover::before {
     animation: shine 1.5s ease-in-out; 
@@ -302,52 +332,14 @@ body {
     transform: scale(1.05) rotateY(5deg);
 }
 
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-    filter: brightness(0.8);
-}
-
 .project-image:hover img {
     transform: scale(1.1);
     filter: brightness(1);
 }
 
+/* --- BOTÃO DE PLAY REMOVIDO/ESCONDIDO --- */
 .play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    background: rgba(102, 126, 234, 0.9);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: white;
-    transition: all 0.3s ease;
-    z-index: 3; 
-    animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { 
-        transform: translate(-50%, -50%) scale(1);
-        box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
-    }
-    50% { 
-        transform: translate(-50%, -50%) scale(1.05);
-        box-shadow: 0 0 0 20px rgba(102, 126, 234, 0);
-    }
-}
-
-.project-image:hover .play-button {
-    background: rgba(102, 126, 234, 1);
-    transform: translate(-50%, -50%) scale(1.2) rotate(360deg);
+    display: none !important; /* Força o ícone a desaparecer permanentemente */
 }
 
 .project-content {
@@ -406,24 +398,22 @@ body {
 .botoes-container {
     position: relative;
     z-index: 10; 
-    display: flex; /* CHAVE: Habilita o alinhamento horizontal */
+    display: flex;
     gap: 15px; 
-    /* flex-wrap: wrap; REMOVIDO para forçar o layout horizontal/vertical */
-    margin-top: 20px; /* Adiciona um espaço da descrição */
+    margin-top: 20px;
 }
 
 .project-link {
-    display: flex; /* Muda para flex para centralizar melhor o conteúdo */
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-grow: 1; /* CHAVE: Faz com que os 3 botões compartilhem a largura igualmente */
+    flex-grow: 1;
     flex-shrink: 1;
     
     position: relative;
     overflow: hidden; 
-    padding: 15px 25px; /* Reduz o padding horizontal para 3 botões */
+    padding: 15px 25px;
     
-    /* Estilos Visuais Comuns */
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
     color: white; 
     text-decoration: none; 
@@ -432,12 +422,10 @@ body {
     transition: all 0.3s ease; 
     animation: slideInLeft 0.6s ease 0.3s backwards; 
     z-index: 1;
-    white-space: nowrap; /* Evita a quebra do texto do botão */
-    font-size: 0.95rem; /* Ajuste para caber 3 botões */
+    white-space: nowrap;
+    font-size: 0.95rem;
 }
 
-/* Estilo específico para o novo botão 'Visitar site' */
-/* Mantendo o gradiente customizado do seu .link-site, mas ajustando para caber */
 .project-link.link-site {
     background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%); 
 }
@@ -446,7 +434,6 @@ body {
     box-shadow: 0 10px 30px rgba(0, 114, 255, 0.4); 
 }
 
-/* Efeito Hover e Brilho (mantido de sua implementação) */
 .project-link::before {
     content: '';
     position: absolute;
@@ -464,11 +451,10 @@ body {
 }
 
 .project-link:hover {
-    transform: translateY(-3px) scale(1.02); /* Escala um pouco menos para caber */
+    transform: translateY(-3px) scale(1.02);
     box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4); 
 }
 
-/* Efeitos 3D (mantidos) */
 .project-card:hover .project-content {
     transform: translateZ(20px);
 }
@@ -576,10 +562,6 @@ footer {
 /* ======== BOTÕES FIXOS (CONTROLES, VOLTAR) ================ */
 /* ========================================================== */
 
-/* REMOÇÃO DO BOTÃO VISITAR SITE FIXO */
-/* O .corner-container e o .link-site FIXO foram removidos daqui */
-
-/* Botões de Controle (Tema e Idioma) */
 .controls-container {
     position: fixed;
     top: 20px;
@@ -624,8 +606,6 @@ footer {
     transform: rotate(20deg);
 }
 
-
-/* Botão Voltar */
 .back-btn {
     position: fixed;
     top: 20px;
@@ -671,7 +651,6 @@ footer {
 /* ========================================================== */
 
 @media (max-width: 768px) {
-    /* Ajustes Gerais para Móvel */
     .carousel-overlay h2 {
         font-size: 2rem;
     }
@@ -719,22 +698,18 @@ footer {
         font-size: 1rem;
     }
     
-    /* RESPONSIVIDADE DOS BOTÕES DENTRO DO CARD (Empilhamento) */
     .botoes-container {
-        flex-direction: column; /* CHAVE: Empilha os botões verticalmente */
-        gap: 10px; /* Ajusta o espaçamento vertical */
+        flex-direction: column;
+        gap: 10px;
     }
 
     .project-link {
-        width: 100%; /* Garante que ocupem a largura total */
-        font-size: 1rem; /* Melhora a legibilidade */
+        width: 100%;
+        font-size: 1rem;
         padding: 12px 25px;
-        white-space: normal; /* Permite a quebra de linha se o texto for longo */
+        white-space: normal;
     }
 
-    /* RESPONSIVIDADE DOS BOTÕES FIXOS */
-
-    /* Botões de Controle (Tema e Idioma) */
     .controls-container {
         top: 10px;
         right: 10px;
@@ -747,7 +722,7 @@ footer {
     }
 
     .control-btn span:not(#current-lang) {
-        display: none; /* OCULTA O TEXTO */
+        display: none;
     }
 
     .control-btn svg {
@@ -755,7 +730,6 @@ footer {
         height: 18px;
     }
 
-    /* Botão Voltar */
     .back-btn {
         padding: 8px 10px; 
         font-size: 0.75rem;
@@ -764,15 +738,13 @@ footer {
     }
 
     .back-btn span {
-        display: none; /* OCULTA O TEXTO */
+        display: none;
     }
 
     .back-btn svg {
         width: 18px;
         height: 18px;
     }
-    
-    /* OBS: O código para o botão fixo .corner-container/.link-site foi removido */
 }
 
 
@@ -872,7 +844,6 @@ body.light-theme .group-tab.active {
     color: white;
 }
 
-/* Tema Claro - Botões Fixos */
 body.light-theme .control-btn {
     background: rgba(0,0,0,0.08);
     border-color: rgba(0,0,0,0.15);
@@ -895,7 +866,6 @@ body.light-theme .back-btn:hover {
     border-color: rgba(102, 126, 234, 0.4);
 }
 
-/* Tema Claro - Botões do Projeto (Com o novo link-site) */
 body.light-theme .project-link {
     background: linear-gradient(135deg, #5566d3 0%, #663d8f 100%);
     color: white;
@@ -906,5 +876,3 @@ body.light-theme .project-link.link-site {
 body.light-theme .project-link:hover {
     box-shadow: 0 10px 30px rgba(85, 102, 211, 0.4); 
 }
-
-/* Os estilos para o .link-site fixo e o .corner-container foram removidos dos estilos base e do light-theme */
