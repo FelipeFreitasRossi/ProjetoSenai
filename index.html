@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SENAI - Projetos 2025</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/i18n.css">
-    <script src="js/script.js" defer></script>
-    <script src="js/i18n.js" defer></script>
+
+    <link rel="stylesheet" href="css/Index.css">
+    <script src="js/TranslateIndex.js" defer></script>
 </head>
 <body>
-    <!-- Botões de Controle de Tema e Idioma -->
     <div class="controls-container">
-        <!-- Botão de Tema -->
         <button class="control-btn" id="theme-toggle" aria-label="Alternar tema">
             <svg class="icon-sun" id="sun-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="12" cy="12" r="5" fill="currentColor"/>
@@ -31,7 +28,6 @@
             <span data-i18n="theme">Tema</span>
         </button>
 
-        <!-- Botão de Idioma -->
         <button class="control-btn" id="language-toggle" aria-label="Alternar idioma">
             <svg class="icon-language" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z" fill="currentColor"/>
@@ -40,7 +36,6 @@
         </button>
     </div>
 
-    <!-- Liquid Waves Background -->
     <div class="wave-container">
         <svg class="wave" viewBox="0 0 1440 320" preserveAspectRatio="none">
             <path fill="url(#grad1)" d="M0,160L48,170.7C96,181,192,203,288,202.7C384,203,480,181,576,154.7C672,128,768,96,864,106.7C960,117,1056,171,1152,181.3C1248,192,1344,160,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
@@ -81,7 +76,6 @@
         <div class="dot"></div>
     </div>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="logo-container">
             <svg class="senai-logo" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
@@ -100,12 +94,10 @@
         <div class="scroll-indicator"></div>
     </section>
 
-    <!-- Classes Section -->
     <section class="classes-section">
         <h2 class="section-title" data-i18n="classesTitle">Turmas SENAI São Carlos 2025</h2>
         
         <div class="classes-grid">
-            <!-- Turma 3TDS -->
             <div class="class-card" onclick="window.location.href='/html/3TDS.html'">
                 <div class="class-image">
                     <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800" alt="3TDS">
@@ -130,14 +122,13 @@
                 </div>
             </div>
 
-            <!-- Turma 2IMEC-B e C -->
             <div class="class-card" onclick="window.location.href='/html/2IMEC.html'">
                 <div class="class-image">
                     <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800" alt="2IMEC-B">
                     <div class="class-badge">2IMEC</div>
                 </div>
                 <div class="class-content">
-                    <h3 class="class-title" data-i18n="class2IMECBTitle">2º Integral em Mecatrônica</h3>
+                    <h3 class="class-title" data-i18n="class2IMECBTitle">2º Integrado em Mecatrônica</h3>
                     <p class="class-description" data-i18n="class2IMECBDesc">
                         Projetos integrando robótica, automação industrial, eletrônica e programação embarcada para soluções mecatrônicas.
                     </p>
@@ -155,16 +146,15 @@
                 </div>
             </div>
 
-            <!-- Turma 2IDS-SC -->
             <div class="class-card" onclick="window.location.href='/html/2IDS.html'">
                 <div class="class-image">
                     <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800" alt="2IDS-SC">
                     <div class="class-badge">2IDS-SC</div>
                 </div>
                 <div class="class-content">
-                    <h3 class="class-title" data-i18n="class2IDSTitle">2º Integral em Desenvolvimento de Sistemas</h3>
+                    <h3 class="class-title" data-i18n="class2IDSTitle">2º Integrado em Desenvolvimento de Sistemas</h3>
                     <p class="class-description" data-i18n="class2IDSDesc">
-                        Turma integral com foco em aplicações web modernas, mobile, banco de dados e arquitetura de software escalável.
+                        Turma integrada com foco em aplicações web modernas, mobile, banco de dados e arquitetura de software escalável.
                     </p>
                     <div class="class-stats">
                         <div class="stat">
@@ -182,7 +172,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about-section">
         <div class="about-container">
             <h2 class="about-title" data-i18n="aboutTitle">Sobre o SENAI São Carlos</h2>
@@ -214,10 +203,8 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <!-- Sobre SENAI -->
             <div class="footer-section">
                 <h3 data-i18n="footerAboutTitle">SENAI São Carlos</h3>
                 <p data-i18n="footerAboutText">
@@ -229,15 +216,14 @@
                 </p>
             </div>
 
-            <!-- Turmas -->
             <div class="footer-section">
                 <h3 data-i18n="footerClassesTitle">Turmas 2024/2025</h3>
                 <p data-i18n="class3TDSTitle">3º Técnico em Desenvolvimento de Sistemas</p>
-                <p data-i18n="class2IMECBTitle">2º Integral em Mecatrônica
-                <p data-i18n="class2IDSTitle">2º Integral em Desenvolvimento de Sistemas</p>
+                <p data-i18n="footerClass2IMECB">2º Integrado em Mecatrônica Turma B</p>
+                <p data-i18n="footerClass2IMECC">2º Integrado em Mecatrônica Turma C</p>
+                <p data-i18n="class2IDSTitle">2º Integrado em Desenvolvimento de Sistemas</p>
             </div>
 
-            <!-- Desenvolvedor -->
             <div class="footer-section">
                 <h3 data-i18n="footerDeveloperTitle">Desenvolvedor</h3>
                 <p><span data-i18n="footerDevelopedBy">Desenvolvido por</span> <strong class="creator-highlight">Felipe De Freitas Rossi</strong></p>

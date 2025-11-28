@@ -18,13 +18,17 @@ const translations = {
         class3TDSTitle: "3º Técnico em Desenvolvimento de Sistemas",
         class3TDSDesc: "Turma de formandos com projetos inovadores em desenvolvimento web full-stack, IoT, automação e sistemas inteligentes.",
         
-        // Turma 2IMEC-B
-        class2IMECBTitle: "2º Integral em Mecatrônica",
+        // Turma 2IMEC (Genérico do Card)
+        class2IMECBTitle: "2º Integrado em Mecatrônica",
         class2IMECBDesc: "Projetos integrando robótica, automação industrial, eletrônica e programação embarcada para soluções mecatrônicas.",
 
+        // Footer Específicos (para diferenciar turmas)
+        footerClass2IMECB: "2º Integrado em Mecatrônica Turma B",
+        footerClass2IMECC: "2º Integrado em Mecatrônica Turma C",
+
         // Turma 2IDS
-        class2IDSTitle: "2º Integral em Desenvolvimento de Sistemas",
-        class2IDSDesc: "Turma integral com foco em aplicações web modernas, mobile, banco de dados e arquitetura de software escalável.",
+        class2IDSTitle: "2º Integrado em Desenvolvimento de Sistemas",
+        class2IDSDesc: "Turma do ensino integrado com foco em aplicações web modernas, mobile, banco de dados e arquitetura de software escalável.",
         
         // Seção Sobre
         aboutTitle: "Sobre o SENAI São Carlos",
@@ -44,7 +48,7 @@ const translations = {
         footerRights: "© 2025 Todos os direitos reservados",
         footerIndustry: "Serviço Nacional de Aprendizagem Industrial",
         
-        // Páginas de Projetos
+        // Páginas de Projetos (se usadas externamente)
         ourProjects: "Nossos Projetos",
         watchVideo: "Funcionamento",
         watchVideoComercial: "Comercial",
@@ -52,7 +56,6 @@ const translations = {
         projects2IMECBTitle: "Projetos 2IMEC-B",
         projects2IMECCTitle: "Projetos 2IMEC-C",
         projects2IDSTitle: "Projetos 2IDS",
-
         linkSite: "Visitar Site",
     },
     en: {
@@ -73,17 +76,17 @@ const translations = {
         class3TDSTitle: "3rd Technical in Systems Development",
         class3TDSDesc: "Graduating class with innovative projects in full-stack web development, IoT, automation and intelligent systems.",
         
-        // Class 2IMEC-B
-        class2IMECBTitle: "2nd Integrated Mechatronics - Class B",
+        // Class 2IMEC (Generic Card)
+        class2IMECBTitle: "2nd Integrated Mechatronics",
         class2IMECBDesc: "Projects integrating robotics, industrial automation, electronics and embedded programming for mechatronic solutions.",
         
-        // Class 2IMEC-C
-        class2IMECCTitle: "2nd Integrated Mechatronics - Class C",
-        class2IMECCDesc: "Development of automated systems, smart sensors and applied industrial process control.",
+        // Footer Specifics
+        footerClass2IMECB: "2nd Integrated Mechatronics Class B",
+        footerClass2IMECC: "2nd Integrated Mechatronics Class C",
         
         // Class 2IDS
         class2IDSTitle: "2nd Integrated Systems Development",
-        class2IDSDesc: "Full-time class focused on modern web applications, mobile, databases and scalable software architecture.",
+        class2IDSDesc: "Full-time integrated class focused on modern web applications, mobile, databases and scalable software architecture.",
         
         // About Section
         aboutTitle: "About SENAI São Carlos",
@@ -111,7 +114,6 @@ const translations = {
         projects2IMECBTitle: "2IMEC-B Projects",
         projects2IMECCTitle: "2IMEC-C Projects",
         projects2IDSTitle: "2IDS Projects",
-
         linkSite: "Visit Website"
     }
 };
