@@ -5,8 +5,8 @@ const translations = {
         theme: "Tema",
         
         // Hero
-        heroTitle: "Projetos SENAI 2025",
-        heroSubtitle: "São Carlos - Inovação e Tecnologia",
+        heroTitle: "Workshop 2025\nProjetos de Inovação",
+        heroSubtitle: "São Carlos - Tecnologia em Ação",
         
         // Seção de Turmas
         classesTitle: "Turmas SENAI São Carlos 2025",
@@ -52,7 +52,6 @@ const translations = {
         projects2IMECBTitle: "Projetos 2IMEC-B",
         projects2IMECCTitle: "Projetos 2IMEC-C",
         projects2IDSTitle: "Projetos 2IDS",
-
         linkSite: "Visitar Site",
     },
     en: {
@@ -60,8 +59,8 @@ const translations = {
         theme: "Theme",
         
         // Hero
-        heroTitle: "SENAI Projects 2025",
-        heroSubtitle: "São Carlos - Innovation and Technology",
+        heroTitle: "Workshop 2025\nInnovation Projects",
+        heroSubtitle: "São Carlos - Technology in Action",
         
         // Classes Section
         classesTitle: "SENAI São Carlos Classes 2025",
@@ -74,12 +73,8 @@ const translations = {
         class3TDSDesc: "Graduating class with innovative projects in full-stack web development, IoT, automation and intelligent systems.",
         
         // Class 2IMEC-B
-        class2IMECBTitle: "2nd Integrated Mechatronics - Class B",
+        class2IMECBTitle: "2nd Integrated Mechatronics",
         class2IMECBDesc: "Projects integrating robotics, industrial automation, electronics and embedded programming for mechatronic solutions.",
-        
-        // Class 2IMEC-C
-        class2IMECCTitle: "2nd Integrated Mechatronics - Class C",
-        class2IMECCDesc: "Development of automated systems, smart sensors and applied industrial process control.",
         
         // Class 2IDS
         class2IDSTitle: "2nd Integrated Systems Development",
@@ -111,7 +106,6 @@ const translations = {
         projects2IMECBTitle: "2IMEC-B Projects",
         projects2IMECCTitle: "2IMEC-C Projects",
         projects2IDSTitle: "2IDS Projects",
-
         linkSite: "Visit Website"
     }
 };
@@ -122,9 +116,7 @@ let currentLang = localStorage.getItem('language') || 'pt';
 function translatePage() {
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
-        // @ts-ignore
         if (translations[currentLang][key]) {
-            // @ts-ignore
             element.textContent = translations[currentLang][key];
         }
     });
