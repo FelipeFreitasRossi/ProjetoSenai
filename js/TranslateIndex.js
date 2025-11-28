@@ -147,47 +147,10 @@ function toggleLanguage() {
     translatePage();
 }
 
-// ========== TROCA DE TEMA ========== 
-function initThemeToggle() {
-    const themeToggle = document.getElementById('theme-toggle');
-    const sunIcon = document.getElementById('sun-icon');
-    const moonIcon = document.getElementById('moon-icon');
-
-    if (!themeToggle || !sunIcon || !moonIcon) return;
-
-    // Carregar tema salvo
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    if (savedTheme === 'light') {
-        document.body.classList.add('light-theme');
-        sunIcon.style.display = 'none';
-        moonIcon.style.display = 'block';
-    }
-
-    // Toggle de tema
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('light-theme');
-        
-        const isLight = document.body.classList.contains('light-theme');
-        localStorage.setItem('theme', isLight ? 'light' : 'dark');
-        
-        // Trocar ícones
-        if (isLight) {
-            sunIcon.style.display = 'none';
-            moonIcon.style.display = 'block';
-        } else {
-            sunIcon.style.display = 'block';
-            moonIcon.style.display = 'none';
-        }
-    });
-}
-
 // ========== INICIALIZAÇÃO ========== 
 document.addEventListener('DOMContentLoaded', () => {
     // Inicializar tradução
     translatePage();
-    
-    // Inicializar tema
-    initThemeToggle();
     
     // Event listener para botão de idioma
     const languageToggle = document.getElementById('language-toggle');
