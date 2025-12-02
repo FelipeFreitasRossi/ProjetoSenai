@@ -1,4 +1,4 @@
-// ========== SISTEMA DE TRADUÇÃO i18n COMPLETO ========== 
+// ========== DICIONÁRIO DE TRADUÇÃO ========== 
 const translations = {
     pt: {
         // Botões
@@ -123,6 +123,7 @@ const translations = {
 };
 
 // ========== FUNÇÕES DE TRADUÇÃO ========== 
+// Lê o idioma salvo no localStorage (chave: 'language') ou usa 'pt'
 let currentLang = localStorage.getItem('language') || 'pt';
 
 function translatePage() {
@@ -139,19 +140,20 @@ function translatePage() {
         langButton.textContent = currentLang.toUpperCase();
     }
     
-    // Atualizar atributo lang do HTML
+    // Atualizar atributo lang do HTML (Boa prática)
     document.documentElement.lang = currentLang === 'pt' ? 'pt-BR' : 'en';
 }
 
 function toggleLanguage() {
     currentLang = currentLang === 'pt' ? 'en' : 'pt';
-    localStorage.setItem('language', currentLang);
+    // SALVA o novo idioma
+    localStorage.setItem('language', currentLang); 
     translatePage();
 }
 
 // ========== INICIALIZAÇÃO ========== 
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar tradução
+    // Inicializar tradução (aplicará o idioma salvo/padrão)
     translatePage();
     
     // Event listener para botão de idioma
