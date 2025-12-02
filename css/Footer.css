@@ -7,14 +7,17 @@ footer {
     z-index: 10;
 }
 
+/* Light theme mantém fundo escuro */
 body.light-theme footer {
-    background: linear-gradient(180deg, rgba(240,240,240,0.9) 0%, rgba(220,220,220,0.95) 100%);
+    background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%);
     border-top-color: rgba(0,0,0,0.1);
 }
 
+/* Conteúdo */
 .footer-content {
     max-width: 1400px;
     margin: 0 auto;
+    background-color: black;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 50px;
@@ -25,22 +28,24 @@ body.light-theme footer {
     text-align: left;
 }
 
+/* ---------- TÍTULOS ---------- */
 .footer-section h3 {
     font-size: 1.5rem;
     margin-bottom: 20px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 body.light-theme .footer-section h3 {
-    background: linear-gradient(135deg, #5566d3 0%, #663d8f 100%);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
+/* ---------- TEXTOS ---------- */
 .footer-section p {
     color: rgba(255,255,255,0.7);
     line-height: 1.8;
@@ -48,10 +53,19 @@ body.light-theme .footer-section h3 {
 }
 
 body.light-theme .footer-section p {
-    color: #555 !important;
+    color: rgba(255,255,255,0.7) !important;
 }
 
-.social-links {
+/* ---------- SPAN TECH LEAD ---------- */
+.techlead-span {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.8) !important; /* mesma cor dos social links */
+    margin-top: 3px;
+}
+
+/* ---------- SOCIAL LINKS ---------- */
+.social-links { 
     display: flex;
     gap: 15px;
     margin-top: 20px;
@@ -73,9 +87,9 @@ body.light-theme .footer-section p {
 }
 
 body.light-theme .social-link {
-    background: rgba(0,0,0,0.05);
-    border-color: rgba(0,0,0,0.1);
-    color: #333;
+    background: rgba(255,255,255,0.05) !important;
+    border-color: rgba(255,255,255,0.1) !important;
+    color: rgba(255,255,255,0.8) !important;
 }
 
 .social-link:hover {
@@ -87,11 +101,12 @@ body.light-theme .social-link {
 }
 
 body.light-theme .social-link:hover {
-    background: rgba(102, 126, 234, 0.15);
-    border-color: rgba(102, 126, 234, 0.3);
-    color: #5566d3;
+    background: rgba(102,126,234,0.2) !important;
+    border-color: rgba(102,126,234,0.5) !important;
+    color: white !important;
 }
 
+/* Icones */
 .social-icon {
     width: 20px;
     height: 20px;
@@ -108,12 +123,14 @@ body.light-theme .social-link:hover {
     height: 16px;
 }
 
+/* Divider */
 .footer-divider {
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.3), transparent);
     margin: 40px 0;
 }
 
+/* ---------- FOOTER BOTTOM ---------- */
 .footer-bottom {
     text-align: center;
     color: rgba(255,255,255,0.5);
@@ -121,7 +138,7 @@ body.light-theme .social-link:hover {
 }
 
 body.light-theme .footer-bottom {
-    color: #555 !important;
+    color: rgba(255,255,255,0.5) !important;
 }
 
 .footer-bottom p {
@@ -135,10 +152,10 @@ body.light-theme .footer-bottom {
 }
 
 body.light-theme .creator-highlight {
-    color: #5566d3 !important;
+    color: #667eea !important;
 }
 
-/* ========== RESPONSIVE MOBILE ========== */
+/* ---------- RESPONSIVO ---------- */
 @media (max-width: 768px) {
     footer {
         padding: 60px 15px 30px;
@@ -164,7 +181,6 @@ body.light-theme .creator-highlight {
 
     .social-links {
         justify-content: center;
-        flex-wrap: wrap;
     }
 
     .social-link {
